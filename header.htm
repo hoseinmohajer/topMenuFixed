@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -6,21 +7,22 @@
 			body {
 				margin: 0px;
 				padding: 0px;
-				height: 1000px;
+				background-image: url('body_bg_top_g.gif');
+				height: 20000px;
 			}
 			.header {
 				width: 100%;
-				height: 70px;
-				background-color: #292929;
+				height: 77px;
+				background-color: #F6F1DB;
 				position: fixed;
 			}
 			.top_menu {
 				width: 70%;
 				min-width: 700px;
-				height: 70px;
+				height: 77px;
 				margin-left: auto;
 				margin-right: auto;
-				background-color: #292929;
+				background-color: #F6F1DB;
 				position: fixed;
 				top: 0px;
 				left: 0px;
@@ -28,11 +30,17 @@
 				border: 0px solid red;
 			}
 			.phone_number {
-				background-color: #999;
-				width: 150px;
-				height: 20px;
+				width: auto;
+				height: auto;
 				float: left;
 				clear: both;
+			}
+			.phone_number img{
+				display: inline;
+				float: left;
+			}
+			.phone_number span{
+				margin-top: 5px;
 			}
 			.usr {
 				width: 30px;
@@ -41,15 +49,74 @@
 				clear: both;
 				background-color: #dedede;
 			}
+			
+			.sliedeshow {
+				width: 70%;
+				min-width: 700px;
+				height: 330px;
+				/*background-color: #F6F1DB;*/
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.sliedeshow img{
+				min-width: 938px;
+				height: 240px;
+				margin-top: 78px;
+			}
+			.logo {
+				float: right;
+				width: 200px;
+				height: 30px;
+				background-color: red;
+			}
+			
+			.food_bar {
+				width: 70%;
+				min-width: 700px;
+				height: 240px;
+				background-color: #fff;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.sub_food_bar {
+				width: 176px;
+				height: 170px;
+				margin: 23px 38px 0px 0px;
+				float: right;
+				border: 6px solid #D5CEA7;
+				border-radius: 5px;
+			}
+			.sub_food_bar img{
+				width: 166px;
+				height: 170px;
+				z-index: 100;
+			}
+			.bottom_label {
+				width: 100%;
+				min-width: 700px;
+				height: 32px;
+				float: right;
+				background-color: red;
+				z-index: -4;
+			}
 		</style>
+		<script>
+			//preload the images for slideshow
+			var image1 = new Image();
+			image1.src = "f1.jpg";
+			var image2 = new Image();
+			image2.src = "f2.jpg";
+			var image3 = new Image();
+			image3.src = "f3.jpg";
+		</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="top_menu">
 				<div class="phone_number">
-					
+					<img src="phone.png" alt="phone_number" /><span>(021) <strong>65654545</strong></span>
 				</div>
-				<div class="usr" id="usr">
+				<!-- <div class="usr" id="usr">
 					<img src="User.png" alt="login" width="29px" height="49px">
 					<div id="usrform" style="display:none;">
 						<form action="#" method="get" accept-charset="utf-8" >
@@ -58,9 +125,27 @@
 							<input type="submit" name="" value="">
 						</form>	
 					</div>
+				</div> -->
+				<div class="logo">
+					<center>THIS IS MY LOGO</center>
 				</div>
 			</div>
-		</div>	
+		</div>
+		
+			<div class="sliedeshow"> 
+				<img src="img" name="slide" />
+			</div>	
+		
+		<center><p>developed by HOSEIN MOHAJER</p></center>
+		
+			<div class="food_bar">
+				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+				<div class="bottom_label"></div>
+			</div>
+		
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
 	</script>
@@ -72,5 +157,25 @@
 	        $("#usrform").fadeToggle("show");
 	    });
 	});
+
+	//counter for change image name
+	var step = 1;
+	function slideshow () {
+		if(!document.images){
+			return
+		}
+		//change image src
+		document.images.slide.src = eval("image" + step + ".src");
+		//change step value 
+		if(step < 3){
+			step ++;
+		}else{
+			step = 1;
+		}
+		//set time for change image in slideshow
+		setTimeout("slideshow()", 2000);
+	}
+	slideshow();
 	</script>
+<!-- http://spingle.net/fine_dining/preview.html -->
 </html>
