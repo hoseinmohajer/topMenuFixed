@@ -8,7 +8,7 @@
 				margin: 0px;
 				padding: 0px;
 				background-image: url('body_bg_top_g.gif');
-				height: 20000px;
+				/*height: 20000px;*/
 			}
 			.header {
 				width: 100%;
@@ -73,7 +73,7 @@
 			.food_bar {
 				width: 70%;
 				min-width: 700px;
-				height: 240px;
+				height: 265px;
 				background-color: #fff;
 				margin-left: auto;
 				margin-right: auto;
@@ -85,19 +85,54 @@
 				float: right;
 				border: 6px solid #D5CEA7;
 				border-radius: 5px;
+				z-index: 2;
+				position: relative;
 			}
-			.sub_food_bar img{
-				width: 166px;
+			.sub_food_bar img {
+				width: 176px;
 				height: 170px;
-				z-index: 100;
 			}
 			.bottom_label {
 				width: 100%;
 				min-width: 700px;
-				height: 32px;
+				height: 75px;
 				float: right;
-				background-color: red;
-				z-index: -4;
+				background-color: #7CB110;
+				position: relative;
+				margin-top: -15px;
+				z-index: 1;
+			}
+			.arrow_bg {
+				background-image: url("arrow_g.png");
+				width: 100%;
+				height: auto;
+				float: right;
+			}
+			.third_col_row_full {
+				width: 100%;
+				height: 340px;
+			}
+			.third_col_row {
+				width: 70%;
+				height: 340px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.cols {
+				width: 32%;
+				height: 330px;
+				float: right;
+				padding: 4px;
+			}
+			.rows {
+				width: 100%;
+				min-height: 50px;
+				height: auto;
+			}
+			.line {
+				/*background-image: url("line.png");*/
+				width: 330px;
+
 			}
 		</style>
 		<script>
@@ -136,7 +171,9 @@
 				<img src="img" name="slide" />
 			</div>	
 		
-		<center><p>developed by HOSEIN MOHAJER</p></center>
+		<br>
+		<center><span>HOSEIN MOHAJER</span>&nbsp;&nbsp;&nbsp;<img src="line2.png"></center>
+		<br>
 		
 			<div class="food_bar">
 				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
@@ -144,6 +181,35 @@
 				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
 				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
 				<div class="bottom_label"></div>
+			</div>
+			<div class="arrow_bg"></div>
+			<div class="third_col_row_full">
+				<div class="third_col_row">
+					<div class="cols">
+						<div class="rows">
+							<center><p><b>News & Events</b></p></center>
+							<center><img src="heading_line.png"></center>
+						</div>
+						<div class="rows">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+							<!-- <div class="line"></div> -->
+							<span class="line"><img src="line.png"></span>
+						</div>
+						<div class="rows">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+							<!-- <div class="line"></div> -->
+							<center><img src="line.png"></center>
+						</div>
+					</div>
+					<div class="cols"></div>
+					<div class="cols"></div>
+				</div>
 			</div>
 		
 	</body>
