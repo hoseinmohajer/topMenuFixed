@@ -4,17 +4,21 @@
 		<meta charset="utf-8">
 		<title>my header</title>
 		<style type="text/css" media="screen">
+			
 			body {
 				margin: 0px;
 				padding: 0px;
 				background-image: url('body_bg_top_g.gif');
-				/*height: 20000px;*/
+				background-repeat: repeat-x;
+				/*background-image: url('shadow.png') repeat-x;*/
 			}
 			.header {
 				width: 100%;
 				height: 77px;
 				background-color: #F6F1DB;
 				position: fixed;
+				z-index: 100;
+				box-shadow: 0px 1px 3px #888888;
 			}
 			.top_menu {
 				width: 70%;
@@ -28,6 +32,7 @@
 				left: 0px;
 				right: 0px;
 				border: 0px solid red;
+				/*box-shadow: 0px 1px 3px #888888;*/
 			}
 			.phone_number {
 				width: auto;
@@ -42,13 +47,74 @@
 			.phone_number span{
 				margin-top: 5px;
 			}
-			.usr {
-				width: 30px;
-				height: 50px;
+			.phone_number ul {
+				display: block;
 				float: left;
-				clear: both;
-				background-color: #dedede;
+				direction: ltr;
 			}
+			.phone_number li {
+				display: block;
+				float: left;
+				direction: ltr;
+			}
+			.phone_number_align {
+				margin-top: 4px;
+				font-weight: bold;
+				font-size: 14pt;
+			} 
+			.login {
+				margin-left: -5px;
+				margin-top: 6px;
+				width: 90px;
+				height: 18px;
+				background-color: #6A9B06;
+				padding: 5px;
+				text-align: center;
+				color: #fff;
+			}
+			.login span {
+				cursor: pointer;
+			}
+			.usr {
+				margin-left: 45px;
+				float: left;
+				width: 90px;
+				height: 18px;
+				background-color: #6A9B06;
+				padding: 5px;
+				text-align: center;
+				color: #fff;
+				cursor: pointer;
+			}
+			.usr a {
+				text-decoration: none;
+				color: #fff;
+			}
+			.usr a:visited {
+				color: #fff;
+			}
+			.usr a:active {
+				color: #fff;
+			}
+			.usr span {
+				cursor: pointer;
+			}
+			.usrForm {
+				width: 235px;
+				height: 0px;
+				background-color: #6A9B06;
+				float: left;
+				padding-right: 5px;
+				padding-left: 5px;
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+			.usrForm form {
+				float: left;
+				direction: ltr;
+
+			}
+
 			
 			.sliedeshow {
 				width: 70%;
@@ -69,7 +135,15 @@
 				height: 30px;
 				background-color: red;
 			}
+			.logo img {
+				width: 200px;
+				height: 30px;
+			}
 			
+			.food_bar_full_width {
+				width: 100%;
+				height: 265px;
+			}
 			.food_bar {
 				width: 70%;
 				min-width: 700px;
@@ -110,7 +184,7 @@
 			}
 			.third_col_row_full {
 				width: 100%;
-				height: 340px;
+				height: 440px;/*340px;*/
 			}
 			.third_col_row {
 				width: 70%;
@@ -119,20 +193,57 @@
 				margin-right: auto;
 			}
 			.cols {
-				width: 32%;
+				width: 29%;
 				height: 330px;
 				float: right;
 				padding: 4px;
+				margin-right: 30px;
 			}
 			.rows {
 				width: 100%;
 				min-height: 50px;
 				height: auto;
+				padding: 15px;
 			}
-			.line {
-				/*background-image: url("line.png");*/
-				width: 330px;
-
+			.rows_title {
+				width: 100%;
+				min-height: 50px;
+				height: auto;
+				text-align: center;
+				font-weight: bold;
+				margin-top: 33px;
+				padding: 15px;
+			}
+			.dividerLine {
+				background: url('line.png') repeat-x left bottom;
+				padding: 15px;
+			}
+			.fourth_row {
+				width: 100%;
+				height: auto;
+				/*border: 1px solid #000;*/
+				background-image: url('shadow.png');
+				background-repeat: repeat-x;
+			}
+			.footer_full {
+				width: 100%;
+				height: 50px;
+				background-color: #6A9B06;
+			}
+			.footer {
+				width: 70%;
+				height: 40px;
+				background-color: #6A9B06;
+				margin-right: auto;
+				margin-left: auto;
+				text-align: center;
+				padding: 5px;
+			}
+			.arrow_right {
+				width: 50px;
+				height: 50px;
+				border: 1px solid red;
+				float: right;
 			}
 		</style>
 		<script>
@@ -143,72 +254,194 @@
 			image2.src = "f2.jpg";
 			var image3 = new Image();
 			image3.src = "f3.jpg";
+			var image4 = new Image();
+			image4.src = "f1.gif";
 		</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="top_menu">
 				<div class="phone_number">
-					<img src="phone.png" alt="phone_number" /><span>(021) <strong>65654545</strong></span>
+					<ul>
+						<li>
+							<img src="phone.png" alt="phone_number" />
+						</li>
+						<li class="phone_number_align">
+							<span>(021) <strong>65654545</strong></span>
+						</li>
+					</ul>
 				</div>
-				<!-- <div class="usr" id="usr">
-					<img src="User.png" alt="login" width="29px" height="49px">
+				<div class="usr" id="usr">
+					<span id="subscription">اشتراک</span>
+					<!-- <img src="User.png" alt="login" width="29px" height="49px"> 
 					<div id="usrform" style="display:none;">
 						<form action="#" method="get" accept-charset="utf-8" >
 							<input type="text" name="" value="">
 							<input type="text" name="" value="">
 							<input type="submit" name="" value="">
 						</form>	
-					</div>
-				</div> -->
+					</div>-->
+					<div class="login">
+						<a href="#"><span>ورود</span></a>
+					</div>	
+				</div>
+				<div class="usrForm" id="usr_form">
+					<form action="#" method="get" accept-charset="utf-8" id="userform" style="display:none;" >
+						<input type="text" name="" value="" placeholder="YourEmail@sample.com">
+						<input type="submit" name="" value="ثبت اشتراک">
+					</form>
+				</div>
+
 				<div class="logo">
-					<center>THIS IS MY LOGO</center>
+					<img src="logo1.jpg">
 				</div>
 			</div>
 		</div>
 		
 			<div class="sliedeshow"> 
-				<img src="img" name="slide" />
+				<img src="f1.gif" name="slide" />
 			</div>	
 		
 		<br>
 		<center><span>HOSEIN MOHAJER</span>&nbsp;&nbsp;&nbsp;<img src="line2.png"></center>
 		<br>
 		
-			<div class="food_bar">
-				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
-				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
-				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
-				<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
-				<div class="bottom_label"></div>
+			<div class="food_bar_full_width">
+				<div class="food_bar">
+					<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+					<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+					<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+					<div class="sub_food_bar"><img src="f1.jpg" alt=""></div>
+					<div class="bottom_label"></div>
+				</div>
 			</div>
 			<div class="arrow_bg"></div>
 			<div class="third_col_row_full">
 				<div class="third_col_row">
+				<!-- <div class="arrow_right">123</div> -->
 					<div class="cols">
-						<div class="rows">
+						<div class="rows_title">
 							<center><p><b>News & Events</b></p></center>
 							<center><img src="heading_line.png"></center>
 						</div>
-						<div class="rows">
+						<div class="rows dividerLine">
 							<center>
 								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
 								</p>
 							</center>
-							<!-- <div class="line"></div> -->
-							<span class="line"><img src="line.png"></span>
+							
 						</div>
 						<div class="rows">
 							<center>
 								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
 								</p>
 							</center>
-							<!-- <div class="line"></div> -->
-							<center><img src="line.png"></center>
 						</div>
 					</div>
-					<div class="cols"></div>
-					<div class="cols"></div>
+					<div class="cols">
+						<div class="rows_title">
+							<center><p><b>News & Events</b></p></center>
+							<center><img src="heading_line.png"></center>
+						</div>
+						<!-- <div class="rows dividerLine">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+							
+						</div> -->
+						<div class="rows">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+						</div>
+					</div><div class="cols">
+						<div class="rows_title">
+							<center><p><b>News & Events</b></p></center>
+							<center><img src="heading_line.png"></center>
+						</div>
+						<div class="rows dividerLine">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+							
+						</div>
+						<div class="rows">
+							<center>
+								<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+								</p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fourth_row">
+				<div class="third_col_row_full">
+					<div class="third_col_row">
+						<div class="cols">
+							<div class="rows_title">
+								<center><p><b>News & Events</b></p></center>
+								<center><img src="heading_line.png"></center>
+							</div>
+							<div class="rows dividerLine">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+								
+							</div>
+							<div class="rows">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+							</div>
+						</div>
+						<div class="cols">
+							<div class="rows_title">
+								<center><p><b>News & Events</b></p></center>
+								<center><img src="heading_line.png"></center>
+							</div>
+							<!-- <div class="rows dividerLine">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+								
+							</div> -->
+							<div class="rows">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+							</div>
+						</div><div class="cols">
+							<div class="rows_title">
+								<center><p><b>News & Events</b></p></center>
+								<center><img src="heading_line.png"></center>
+							</div>
+							<div class="rows dividerLine">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+								
+							</div>
+							<div class="rows">
+								<center>
+									<p>sometext sometext sometext sometext sometext sometext sometext sometext sometextsometext sometext sometext 
+									</p>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer_full">
+				<div class="footer">
+					&copy; تمام حقوق این سایت محفوظ می باشد
 				</div>
 			</div>
 		
@@ -217,10 +450,22 @@
 	</script>
 	<script>
 	$(document).ready(function () {
-		$('#usr').click( function() {
-	        var toggleWidth = $("#usr").width() == 300 ? "30px" : "300px";
-	        $('#usr').animate({ width: toggleWidth });
+		$('#subscription').click( function() {
+			
+	        // var toggleWidth = $("#usr_form").width() == 300 ? "0px" : "300px";
+	        // $('#usr_form').animate({ width: toggleWidth });
+	        
+	        var toggleheight = $("#usr_form").height() == 67 ? "0px" : "67px";
+	        $('#usr_form').animate({ height: toggleheight });
+	        
+	        if($("#usr_form").height() != 67){
+	        	$("#usr_form").css("padding-top", "5px");
+	        }else{
+	        	$("#usr_form").animate({"padding-top": "0px"});
+	        }
+
 	        $("#usrform").fadeToggle("show");
+	        $("#userform").fadeToggle("show");
 	    });
 	});
 
@@ -233,7 +478,7 @@
 		//change image src
 		document.images.slide.src = eval("image" + step + ".src");
 		//change step value 
-		if(step < 3){
+		if(step < 4){
 			step ++;
 		}else{
 			step = 1;
