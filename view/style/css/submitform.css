@@ -1,0 +1,74 @@
+.login_form_box {
+	width: 50%;
+	min-width: 500px;
+	height: auto;
+	min-height: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 50px;
+}
+.login_form_box p {
+	float: right;
+	color: #3C443A;
+}
+.login_form_box p a {
+	color: #6A9B06;
+	text-decoration: none;
+}
+.login_form_box label {
+	float: right;
+	clear: both;
+	margin-top: 10px;
+}
+.input_text {
+	float: left;
+	margin-bottom: 20px;
+	margin-right: 30px;
+	width: 298px;
+	height: 32px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	text-decoration: rtl;
+	text-align: right;
+	padding: 2px;
+	font-size: 20px;
+}
+.button_group {
+	float: right;
+	width: 500px;
+	height: 55px;
+}
+.button {
+	float: left;
+	margin-left: 100px;
+	width: 100px;
+	height: 39px;
+	border-radius: 3px;
+	background-color: #F8E6CE;
+	border: 1px solid gray;
+	font-size: 16px;
+}
+.note {
+	float: right;
+}
+.note p {
+	direction: rtl;
+	text-align: right;
+	color: #FC5959;
+	font-size: 9pt;
+}
+.forgetpass {
+	float: left;
+	margin-top: 10px;
+}
+.forgetpass a {
+	direction: rtl;
+	text-align: right;
+	color: #6B6464;
+	font-size: 9pt;
+	text-decoration: none;
+
+}
