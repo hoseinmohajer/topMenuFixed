@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,7 +18,7 @@
 							<img src="../style/img/phone.png" alt="phone_number" />
 						</li>
 						<li class="phone_number_align">
-							<span>(021) <strong>65654545</strong></span>
+							<span>(021) <strong>00000000</strong></span>
 						</li>
 					</ul>
 				</div>
@@ -27,11 +28,16 @@
 				<!-- start top menu -->
 				<div class="topmenu">
 					<ul>
-						<li><a href="index.htm">صفحه اصلی </a></li>
+						<li><a href="index.php">صفحه اصلی </a></li>
 						<li><a href="#">ارتباط با ما</a></li>
-						<li><a href="signup.htm">عضویت در سایت </a></li>
+						<li><a href="signup.php">عضویت در سایت </a></li>
 						<li><a href="#"  id="subscription">اشتراک</a></li>
-						<li><a href="signin.htm">ورود</a></li>
+						<li><a href="signin.php">ورود</a></li>
+						<?php
+							if(isset($_SESSION['username'])){
+								echo '<li><a href="../../controller/logout.php">خروج</a></li>';
+							}
+						?>
 					</ul>
 				</div>
 				<div class="usrForm" id="usr_form">
@@ -49,7 +55,15 @@
 			</div>	
 		
 		<br>
-		<center><img src="../style/img/line2.png"></center>
+		<center><span>
+			<?php
+				if(isset($_SESSION['username'])){
+					echo "Welcom: " . $_SESSION['username'];
+				}else{
+					echo "Guest user";
+				}
+			?>
+			</span>&nbsp;&nbsp;&nbsp;<img src="../style/img/line2.png"></center>
 		<br>
 		<div class="third_col_row_full">
 			<div class="third_col_row">

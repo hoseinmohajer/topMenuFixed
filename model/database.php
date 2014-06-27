@@ -3,14 +3,17 @@
 
 function query($query){
 	
-	$con = mysqli_connect("localhost", "root", "root", "resturant");
-	if(!$con){
+	$sql = mysql_connect("localhost", "root", "root");
+	if(!$sql){
 		die("There is an error in database connection: ". mysqli_connect_errno());
 	}
-
-	if (mysqli_query($con,$query)) {
-	  // echo "the query execute successfully";
-	  return mysqli_query($con,$query);
+	$con = mysql_select_db("resturant");
+	if(!$con){
+		die("There is an error in database selection: ". mysqli_connect_errno());
+	}
+	$_query = mysql_query($query);
+	if ($_query) {
+	  return $_query;
 	} else {
 	  echo "Error creating table: " . mysqli_error($con);
 	}
