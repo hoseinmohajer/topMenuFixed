@@ -31,7 +31,7 @@
 						<li><a href="#">ارتباط با ما</a></li>
 						<li><a href="signup.htm">عضویت در سایت </a></li>
 						<li><a href="#"  id="subscription">اشتراک</a></li>
-						<li><a href="submitform.htm">ورود</a></li>
+						<li><a href="signin.htm">ورود</a></li>
 					</ul>
 				</div>
 				<div class="usrForm" id="usr_form">
@@ -55,23 +55,25 @@
 			<div class="third_col_row">
 				<div class="login_form_box signupform">
 					<!-- <p>در صورت نداشتن حساب کاربری <a href="#">اینجا</a> را کلیک کنید</p> -->
-					<form action="#" method="post">
-						<label for="username">نام کاربری</label>
-						<input type="text" class="input_text" placeholder="نام کاربری" id="username">
+					<form action="../../controller/signup.php" method="post">
 						<label for="firstname">نام</label>
-						<input type="text" class="input_text" placeholder="نام" id="firstname">
+						<input type="text" class="input_text" placeholder="نام" id="firstname" name="firstname">
 						<label for="lastname">نام خانوادگی</label>
-						<input type="text" class="input_text" placeholder="نام خانوادگی" id="lastname">
+						<input type="text" class="input_text" placeholder="نام خانوادگی" id="lastname" name="lastname">
+						<label for="username">نام کاربری</label>
+						<input type="text" class="input_text" placeholder="نام کاربری" id="username" name="username">
+						<label for="pass">کلمه عبور</label>
+						<input type="password" class="input_text" placeholder="کلمه عبور" id="pass" name="pass">
 						<label for="phonenumber">شماره تلفن ثابت</label>
-						<input type="text" class="input_text" placeholder="شماره تلفن ثابت" id="phonenumber">
+						<input type="text" class="input_text" placeholder="شماره تلفن ثابت" id="phonenumber" name="phonenumber">
 						<label for="mobile">شماره تلفن همراه</label>
-						<input type="text" class="input_text" placeholder="شماره تلفن همراه" id="mobile">
+						<input type="text" class="input_text" placeholder="شماره تلفن همراه" id="mobile" name="cellphone">
 						<label for="email">آدرس پست الکترونیکی</label>
-						<input type="email" class="input_text" placeholder="yourmail@sample.com" id="email">
+						<input type="email" class="input_text" placeholder="yourmail@sample.com" id="email" name="email">
 
 						<div class="button_group">
 							<input type="reset" value="از نو" class="button">
-							<input type="submit" value="ورود" class="button" id="submit">
+							<input type="submit" value="ذخیره" class="button" id="submit">
 						</div>
 					</form>
 					<div class="note">

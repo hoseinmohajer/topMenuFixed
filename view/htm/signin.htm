@@ -31,7 +31,7 @@
 						<li><a href="#">ارتباط با ما</a></li>
 						<li><a href="signup.htm">عضویت در سایت </a></li>
 						<li><a href="#"  id="subscription">اشتراک</a></li>
-						<li><a href="submitform.htm">ورود</a></li>
+						<li><a href="signin.htm">ورود</a></li>
 					</ul>
 				</div>
 				<div class="usrForm" id="usr_form">
@@ -55,11 +55,11 @@
 			<div class="third_col_row">
 				<div class="login_form_box">
 					<p>در صورت نداشتن حساب کاربری <a href="signup.htm">اینجا</a> را کلیک کنید</p>
-					<form action="#" method="post">
+					<form action="../../controller/signin.php" method="post">
 						<label for="username">نام کاربری</label>
-						<input type="text" class="input_text" placeholder="نام کاربری" id="username">
+						<input type="text" class="input_text" placeholder="نام کاربری" id="username" name="username">
 						<label for="password">کلمه عبور</label>
-						<input type="password" class="input_text" placeholder="کلمه عبور" id="password">
+						<input type="password" class="input_text" placeholder="کلمه عبور" id="password" name="password">
 						<div class="button_group">
 							<input type="reset" value="از نو" class="button">
 							<input type="submit" value="ورود" class="button" id="submit">
