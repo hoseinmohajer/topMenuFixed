@@ -41,9 +41,10 @@
 					</ul>
 				</div>
 				<div class="usrForm" id="usr_form">
-					<form action="#" method="get" accept-charset="utf-8" id="userform" >
-						<input class="usrForm_form_input" type="text" name="" value="" placeholder="YourEmail@sample.com">
-						<input class="usr_form_button" type="submit" name="" value="ثبت اشتراک">
+					<form action="../../controller/subscription.php" method="post" accept-charset="utf-8" id="userform" >
+						<input class="usrForm_form_input" type="email" name="subscriptionEmail" placeholder="YourEmail@sample.com">
+						<input type="hidden" name="pagename" value="signup.php">
+						<input class="usr_form_button" type="submit" value="ثبت اشتراک">
 					</form>
 				</div>
 				<!-- end top menu -->

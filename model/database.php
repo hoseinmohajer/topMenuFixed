@@ -1,29 +1,20 @@
 <?php
-
-
 function query($query){
 	
-	$sql = mysql_connect("localhost", "root", "root");
-	if(!$sql){
-		die("There is an error in database connection: ". mysqli_connect_errno());
-	}
-	$con = mysql_select_db("resturant");
+	$con = mysql_connect("localhost", "root", "root");
 	if(!$con){
-		die("There is an error in database selection: ". mysqli_connect_errno());
+		die("There is an error in database connection: ". mysql_error());
+	}
+	$select = mysql_select_db("resturant");
+	if(!$select){
+		die("There is an error in database selection: ". mysql_error());
 	}
 	$_query = mysql_query($query);
 	if ($_query) {
 	  return $_query;
 	} else {
-	  echo "Error creating table: " . mysqli_error($con);
+	  echo "Error creating table: " . mysql_error();
 	}
-
-	// $select = mysqli_query($con, "SELECT ".$foo." FROM ".$tablename." WHERE ".$colname = $colvalue."");
-
-	mysqli_close($con);
+	mysql_close($con);
 }
-
-
-
-
 ?>
