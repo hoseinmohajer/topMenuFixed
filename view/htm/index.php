@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,40 +17,34 @@
 							<img src="../style/img/phone.png" alt="phone_number" />
 						</li>
 						<li class="phone_number_align">
-							<span>(021) <strong>65654545</strong></span>
+							<span>(021) <strong>00000000</strong></span>
 						</li>
 					</ul>
 				</div>
-				<div class="usr" id="usr">
-					<span id="subscription">اشتراک</span>
-					<!-- <img src="User.png" alt="login" width="29px" height="49px"> 
-					<div id="usrform" style="display:none;">
-						<form action="#" method="get" accept-charset="utf-8" >
-							<input type="text" name="" value="">
-							<input type="text" name="" value="">
-							<input type="submit" name="" value="">
-						</form>	
-					</div>-->
-					<div class="login">
-						<a href="#"><span>ورود</span></a>
-					</div>	
-				</div>
-				<div class="usrForm" id="usr_form">
-					<form action="#" method="get" accept-charset="utf-8" id="userform" style="display:none;" >
-						<input type="text" name="" value="" placeholder="YourEmail@sample.com">
-						<input type="submit" name="" value="ثبت اشتراک">
-					</form>
-				</div>
 				<div class="logo">
-					<img src="../style/img/logo1.jpg">
+					<img src="../style/img/logo2.png">
 				</div>
 				<!-- start top menu -->
 				<div class="topmenu">
 					<ul>
-						<li><a href="#">صفحه اصلی </a></li>
+						<li><a href="index.php">صفحه اصلی </a></li>
 						<li><a href="#">ارتباط با ما</a></li>
-						<li><a href="#">عضویت در سایت </a></li>
+						<li><a href="signup.php">عضویت در سایت </a></li>
+						<li><a href="#"  id="subscription">اشتراک</a></li>
+						<li><a href="signin.php">ورود</a></li>
+						<?php
+							if(isset($_SESSION['username'])){
+								echo '<li><a href="../../controller/logout.php">خروج</a></li>';
+							}
+						?>
 					</ul>
+				</div>
+				<div class="usrForm" id="usr_form">
+					<form action="../../controller/subscription.php" method="post" accept-charset="utf-8" id="userform" >
+						<input class="usrForm_form_input" type="email" name="subscriptionEmail" placeholder="YourEmail@sample.com">
+						<input type="hidden" name="pagename" value="index.php">
+						<input class="usr_form_button" type="submit" value="ثبت اشتراک">
+					</form>
 				</div>
 				<!-- end top menu -->
 			</div>
@@ -60,7 +55,16 @@
 			</div>	
 		
 		<br>
-		<center><span>HOSEIN MOHAJER</span>&nbsp;&nbsp;&nbsp;<img src="../style/img/line2.png"></center>
+		<center>
+			<span>
+			<?php
+				if(isset($_SESSION['username'])){
+					echo "Welcom: " . $_SESSION['username'];
+				}else{
+					echo "Guest user";
+				}
+			?>
+			</span>&nbsp;&nbsp;&nbsp;<img src="../style/img/line2.png"></center>
 		<br>
 		
 			<div class="food_bar_full_width">
@@ -212,7 +216,7 @@
 			</div>
 		
 	</body>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="../style/js/jquery-1.11.1.min.js"></script>
 	<script src="../style/js/slideshow.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="../style/js/formloader.js" type="text/javascript" charset="utf-8" async defer></script>
 <!-- http://spingle.net/fine_dining/preview.html -->

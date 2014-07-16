@@ -4,11 +4,11 @@ $(document).ready(function () {
         // var toggleWidth = $("#usr_form").width() == 300 ? "0px" : "300px";
         // $('#usr_form').animate({ width: toggleWidth });
         
-        var toggleheight = $("#usr_form").height() == 67 ? "0px" : "67px";
+        var toggleheight = $("#usr_form").height() == 35 ? "0px" : "35px";
         $('#usr_form').animate({ height: toggleheight });
         
-        if($("#usr_form").height() != 67){
-        	$("#usr_form").css("padding-top", "5px");
+        if($("#usr_form").height() != 35){
+        	$("#usr_form").css("padding-top", "10px");
         }else{
         	$("#usr_form").animate({"padding-top": "0px"});
         }

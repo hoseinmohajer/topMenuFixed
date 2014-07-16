@@ -1,0 +1,11 @@
+=> documents
+* php forms for restuarant site
+* gallery
+* login form
+* main page sub box for images and food menu
+* images with full resulation for slideshow
+* food page with menu and food image's 
+* arrow key for slideshow
+* social sites for footer of pages
+* the pages for user request when s/he want to bye food 
+* 
